@@ -72,12 +72,8 @@ hist, _ = np.histogram(encrypted_image, bins=256, range=(0, 256), density=True)
 entropy_value = entropy(hist, base=2)
 print(f"Entropia informațională a cheii: {entropy_value:.4f} biți")
 
-# Instead of:
-# plt.hist(encrypted_image, bins=256, range=(0, 256), color='gray')
-
 plt.figure(figsize=(10, 5))
 
-# Flatten the encrypted image into a 1D array and plot its histogram:
 plt.hist(encrypted_image.ravel(), bins=256, range=(0, 256), color='gray')
 plt.title('Histogramă a valorilor imaginii criptate')
 plt.xlabel('Valoare pixel')
@@ -85,5 +81,6 @@ plt.ylabel('Frecvență')
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
 
 
